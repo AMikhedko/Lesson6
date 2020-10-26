@@ -1,5 +1,5 @@
 import re
-
+#First step
 def readMass(fileName):
     with open(fileName) as file:
 
@@ -16,14 +16,14 @@ def readMass(fileName):
             mass.append(z)
             N+=1
     return mass, N
-
+#Print Mass
 def PrintMass(mass, N):
 
     for i in range(N):
         for j in range(N):
             print("%-4d" % mass[i][j], end='')
         print()
-
+#Calculating the sum of column
 def ColumnMass(mass, N):
     sum_a = []
 
@@ -35,7 +35,7 @@ def ColumnMass(mass, N):
     for k in range(len(sum_a)):
         print(sum_a[k], end=' ')
     return sum_a
-
+#Finding the biggest sum
 def CalcMax(sum_a):
     ind = 0
     print()
@@ -44,7 +44,7 @@ def CalcMax(sum_a):
         if sum_a[k] > sum_a[ind]:
             ind = k
     return ind+1
-
+#Main
 if __name__ == '__main__':
     mass, N = readMass(r'input.txt')
     PrintMass(mass, N)
